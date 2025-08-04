@@ -174,4 +174,3 @@ Create better profiles with less effort and smarter automation!
 ---
 
 *This project is built with FastAPI, OpenAI GPT & Whisper, and hosted on Render.*
-```
