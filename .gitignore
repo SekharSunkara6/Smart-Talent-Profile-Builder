@@ -1,0 +1,37 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Environments
+venv/
+.venv/
+env/
+ENV/
+
+# Secrets and environment variables
+.env
+
+# Data files
+data/profiles.json
+
+# Uploaded static files
+static/
+
+# Editor config
+.idea/
+.vscode/
+
+# Distribution / packaging
+build/
+dist/
+*.egg-info/
+.eggs/
+
+# Byte-compiled, optimized, DLL files
+*.pyc
+*.pyo
+*.pyd
+
+# OS files
+.DS_Store
