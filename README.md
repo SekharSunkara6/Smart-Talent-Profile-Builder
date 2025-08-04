@@ -1,6 +1,6 @@
 # Smart Talent Profile Builder API
 
-[Live Demo & API Docs](https://smart-talent-profile-builder.onrender.com/docs)
+(https://smart-talent-profile-builder.onrender.com/docs)
 
 ---
 
@@ -167,10 +167,7 @@ A: Yes, with Python 3.10 and configured environment variables, you can deploy on
 
 ## Contributors
 
-- [Sekhar Sunkara](https://github.com/SekharSunkara6) — Backend & AI developer, project lead
-
----
-
+- [Sekhar Sunkara](https://github.com/SekharSunkara6) — Backend & AI developer, project lead.
 Thank you for using Smart Talent Profile Builder!  
 Create better profiles with less effort and smarter automation!
 
