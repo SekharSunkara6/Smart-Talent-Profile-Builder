@@ -1,12 +1,13 @@
 # Smart Talent Profile Builder API
 
-Live URL: https://smart-talent-profile-builder.onrender.com/docs
+Live URL: https://smart-talent-profile-builder.onrender.com/docs  
+GitHub Repository: https://github.com/SekharSunkara6/Smart-Talent-Profile-Builder.git
 
 ---
 
 ## Overview
 
-Smart Talent Profile Builder is a backend API service designed to automate onboarding and profile creation for creators and talent (photographers, designers, videographers, writers, artists, directors, and more). It ingests data from multiple external sources (Instagram, LinkedIn mock data, resumes) and automatically builds rich, structured, searchable profiles enhanced with AI.
+Smart Talent Profile Builder is a backend API service designed to automate onboarding and profile creation for creators and talent (photographers, designers, videographers, writers, artists, directors, and more). It ingests data from multiple external sources—Instagram link, LinkedIn mock data, and resumes—and automatically builds structured, searchable profiles enriched with AI.
 
 This system drastically reduces manual onboarding effort, improves profile quality, and helps in effective talent matchmaking inside platforms like BreadButter.
 
@@ -16,7 +17,7 @@ This system drastically reduces manual onboarding effort, improves profile quali
 
 ### Core
 
-- Import creator data from at least two sources — Instagram link and LinkedIn mock JSON, plus resume text.
+- Import creator data from at least two sources—Instagram link and LinkedIn mock JSON, plus resume text.
 - Parse, clean, and store diverse content: personal info, skills, work samples, links, tags.
 - Scalable Pydantic schemas modeling profiles, work samples, hashtags, voice intros.
 - REST API backend with FastAPI, documented and testable via OpenAPI Swagger UI.
@@ -36,9 +37,9 @@ This system drastically reduces manual onboarding effort, improves profile quali
 | Endpoint               | Method | Description                                        |
 |------------------------|--------|----------------------------------------------------|
 | `/`                    | GET    | Health check — confirms API is running             |
-| `/import_profile`       | POST   | Import and build profile from JSON sources         |
-| `/profiles`             | GET    | List all stored profiles                            |
-| `/upload_audio`         | POST   | Upload audio file for transcription (Whisper AI)  |
+| `/import_profile`      | POST   | Import and build profile from JSON sources         |
+| `/profiles`            | GET    | List all stored profiles                           |
+| `/upload_audio`        | POST   | Upload audio file for transcription (Whisper AI)   |
 
 **Try it now:** [Swagger UI Documentation](https://smart-talent-profile-builder.onrender.com/docs)
 
@@ -78,54 +79,62 @@ curl -X POST "https://smart-talent-profile-builder.onrender.com/upload_audio" \
 
 ---
 
-## Setup & Deployment
+## How to Clone & Run Locally
 
-### Local Setup
+### Step 1: Clone the Repository
 
-1. Clone the repo.
+```
+git clone https://github.com/SekharSunkara6/Smart-Talent-Profile-Builder.git
+cd Smart-Talent-Profile-Builder
+```
 
-2. Create a Python 3.10 virtual environment:
+### Step 2: Create a Python 3.10 virtual environment
 
-   ```
-   python3.10 -m venv venv
-   source venv/bin/activate  # Windows: .\venv\Scripts\activate
-   ```
+```
+python3.10 -m venv venv
+# For Linux/Mac:
+source venv/bin/activate
+# For Windows:
+.\venv\Scripts\activate
+```
 
-3. Install dependencies:
+### Step 3: Install dependencies
 
-   ```
-   pip install -r requirements.txt
-   ```
+```
+pip install -r requirements.txt
+```
 
-4. Set your OpenAI API key in environment variables:
+### Step 4: Set your OpenAI API key in environment variables
 
-   ```
-   export OPENAI_API_KEY="your_openai_api_key"  # Windows PowerShell: $env:OPENAI_API_KEY="your_key"
-   ```
+```
+export OPENAI_API_KEY="your_openai_api_key"  # Windows PowerShell: $env:OPENAI_API_KEY="your_key"
+```
 
-5. Run the app locally:
+### Step 5: Run the app locally
 
-   ```
-   uvicorn app:app --reload
-   ```
+```
+uvicorn app:app --reload
+```
+
+- Visit http://127.0.0.1:8000/docs to interact with your local API.
 
 ---
 
-### Production Deployment
+## Production Deployment
 
 - Hosted on Render at: https://smart-talent-profile-builder.onrender.com
-- **Python version fixed as 3.10 via runtime.txt and environment variable on Render**
+- **Python version fixed as 3.10 via `runtime.txt` and an environment variable on Render**
 - Environment variable `OPENAI_API_KEY` set securely on Render dashboard
-- Auto deployment enabled on GitHub push
+- Auto deployment enabled on every GitHub push
 
 ---
 
 ## Important Notes on OpenAI Quota and AI Features
 
-- The API heavily relies on OpenAI GPT and Whisper models for bios, hashtags, skills detection, and transcription.
-- **If your OpenAI API quota is exceeded or billing is not enabled, the system gracefully returns mock data and fallback messages instead of failing.**
-- For full AI-powered profile enrichment and voice transcription, ensure your OpenAI subscription and billing are active, and your quota allows sufficient usage.
-- You can monitor API usage and quota on your [OpenAI dashboard](https://platform.openai.com/account/usage).
+- The API uses OpenAI GPT and Whisper models for bios, hashtags, skills detection, and transcription.
+- **If your OpenAI API quota is exceeded or billing is not enabled, the system gracefully returns fallback/mock data, never crashing or failing.**
+- For full AI-powered profile enrichment and voice transcription, ensure your OpenAI subscription and billing are active and your quota is sufficient.
+- You can monitor your usage and quota on the [OpenAI dashboard](https://platform.openai.com/account/usage).
 
 ---
 
@@ -155,10 +164,10 @@ curl -X POST "https://smart-talent-profile-builder.onrender.com/upload_audio" \
 ## FAQ
 
 **Q: What happens when OpenAI quota is exceeded?**  
-A: The API returns safe fallback mock data and does not interrupt your UX, ensuring uptime.
+A: The API returns safe fallback/mock data and does not interrupt your UX, ensuring uptime.
 
 **Q: How can I add new AI integrations like image tagging?**  
-A: The project has placeholder AI utility modules — you can extend them easily with new API calls.
+A: The project includes placeholder AI utility modules — you can extend them easily with new API calls.
 
 **Q: Can I deploy this on other platforms?**  
 A: Yes, with Python 3.10 and configured environment variables, you can deploy on AWS, Heroku, or similar.
@@ -168,9 +177,11 @@ A: Yes, with Python 3.10 and configured environment variables, you can deploy on
 ## Contributors
 
 - [Sekhar Sunkara](https://github.com/SekharSunkara6) — Backend & AI developer, project lead.
-Thank you for using Smart Talent Profile Builder!  
-Create better profiles with less effort and smarter automation!
 
 ---
 
+Thank you for using Smart Talent Profile Builder!  
+Create better profiles with less effort and smarter automation.
+
 *This project is built with FastAPI, OpenAI GPT & Whisper, and hosted on Render.*
+```
